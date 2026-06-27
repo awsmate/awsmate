@@ -509,15 +509,28 @@ export default function App() {
                     <p className="text-xl font-black text-slate-900">mohamed.ashanapro@gmail.com</p>
                   </div>
                 </a>
-                <a href="https://wa.me/14582453965" className="flex items-center gap-6 group">
-                  <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all shadow-sm">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Call / WhatsApp</p>
-                    <p className="text-xl font-black text-slate-900">+1 (458) 245-3965</p>
-                  </div>
-                </a>
+                
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <a href="tel:+14582453965" className="flex items-center gap-6 group flex-1">
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Call Us</p>
+                      <p className="text-lg font-black text-slate-900">+1 (458) 245-3965</p>
+                    </div>
+                  </a>
+                  <a href="https://wa.me/14582453965" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group flex-1">
+                    <div className="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all shadow-sm">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">WhatsApp</p>
+                      <p className="text-lg font-black text-slate-900">Message Now</p>
+                    </div>
+                  </a>
+                </div>
+
                 <a href="https://www.linkedin.com/in/awsmate/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group">
                   <div className="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
                     <Linkedin size={24} />
