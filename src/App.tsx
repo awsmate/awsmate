@@ -220,6 +220,55 @@ const Step = ({ number, title, description, isLast }) => {
   );
 };
 
+const VideoSection = () => {
+  return (
+    <section className="py-24 px-6 relative overflow-hidden bg-white">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter">See How We Scale You</h2>
+          <p className="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
+            A quick look at the systems and strategies we use to drive consistent B2B growth.
+          </p>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="relative rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-100 border-[8px] border-white bg-slate-100 aspect-video"
+        >
+          <video 
+            className="w-full h-full object-cover"
+            controls
+            poster="/banner.png"
+            muted
+            loop
+          >
+            <source src="/marketing-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Play Button Overlay (Subtle) */}
+          <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+            <div className="w-20 h-20 bg-blue-600/90 text-white rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm">
+              <Zap size={40} fill="currentColor" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-50 rounded-full blur-3xl -z-10 opacity-40"></div>
+    </section>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -299,6 +348,9 @@ export default function App() {
           </motion.div>
         </div>
       </header>
+
+      {/* Marketing Video Section */}
+      <VideoSection />
 
       {/* Metrics Section */}
       <section className="py-10 px-6">
